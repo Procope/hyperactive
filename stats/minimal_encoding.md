@@ -2,7 +2,7 @@ Solving a sudoku with Pycosat, zChaff, and Walksat
 ==================================================
 source: [Kaggle sudoku dataset](https://www.kaggle.com/bryanpark/sudoku?) (1 million sudokus with solutions)
 
-Minimal encoding [(Lynce, Inês, and Joël Ouaknine. "Sudoku as a SAT Problem." ISAIM. 2006.)](http://sat.inesc.pt/~ines/publications/aimath06.pdf)
+Minimal encoding [(Lynce, Inês, and Joël Ouaknine. "Sudoku as a SAT Problem.")](http://sat.inesc.pt/~ines/publications/aimath06.pdf)
 ----------------
 
 
