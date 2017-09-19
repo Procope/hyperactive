@@ -2,12 +2,11 @@ Solving a sudoku with Pycosat, zChaff, and Walksat
 ==================================================
 source: [Kaggle sudoku dataset](https://www.kaggle.com/bryanpark/sudoku?) (1 million sudokus with solutions)
 
-Extended encoding [(Lynce, Inês, and Joël Ouaknine. "Sudoku as a SAT Problem." ISAIM. 2006.)](http://sat.inesc.pt/~ines/publications/aimath06.pdf)
-----------------
+### Extended encoding ([Lynce, Inês, and Joël Ouaknine. "Sudoku as a SAT Problem."](http://sat.inesc.pt/~ines/publications/aimath06.pdf))
 
-### Sudoku #1
+---    
 
-#### Quiz
+#### Quiz #1
 ```
 [0 0 4 3 0 0 2 0 9]
 [0 0 5 0 0 9 0 0 1]
@@ -20,7 +19,7 @@ Extended encoding [(Lynce, Inês, and Joël Ouaknine. "Sudoku as a SAT Problem."
 [0 4 2 9 1 0 3 0 0]
 ```
 
-#### Solution
+#### Solution #1
 ```
 [8 6 4 3 7 1 2 5 9]
 [3 2 5 8 4 9 7 6 1]
