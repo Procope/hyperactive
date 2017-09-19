@@ -1,11 +1,11 @@
 Solving a sudoku with Pycosat, zChaff, and Walksat
 ==================================================
 from the Kaggle sudoku dataset (1 million sudokus with solutions)
------------------------------------------------------------------
 
 ### Sudoku #1
 
 #### Quiz
+```
 [0 0 4 3 0 0 2 0 9]
 [0 0 5 0 0 9 0 0 1]
 [0 7 0 0 6 0 0 4 3]
@@ -15,8 +15,10 @@ from the Kaggle sudoku dataset (1 million sudokus with solutions)
 [6 0 0 0 0 0 1 0 5]
 [0 0 3 5 0 8 6 9 0]
 [0 4 2 9 1 0 3 0 0]
+```
 
 #### Solution
+```
 [8 6 4 3 7 1 2 5 9]
 [3 2 5 8 4 9 7 6 1]
 [9 7 1 2 6 5 8 4 3]
@@ -26,12 +28,15 @@ from the Kaggle sudoku dataset (1 million sudokus with solutions)
 [6 8 9 7 3 4 1 2 5]
 [7 1 3 5 2 8 6 9 4]
 [5 4 2 9 1 6 3 7 8]
-
+```
 
 SAT solvers
 -----------
 
-### Pycosat --> Assignment found
+### Pycosat
+Assignment found.
+
+```
 [8 6 4 3 7 1 2 5 9]
 [3 2 5 8 4 9 7 6 1]
 [9 7 1 2 6 5 8 4 3]
@@ -41,8 +46,12 @@ SAT solvers
 [6 8 9 7 3 4 1 2 5]
 [7 1 3 5 2 8 6 9 4]
 [5 4 2 9 1 6 3 7 8]
+```
 
-###zChaff --> Assignment found
+### zChaff
+Assignment found.
+
+```
 Max Decision Level                          0
 Num. of Decisions                           1
 ( Stack + Vsids + Shrinking Decisions )     0 + 0 + 0
@@ -58,9 +67,12 @@ Deleted (Total) Literals                    0
 Number of Implication                       729
 Total Run Time                              0.000515
 RESULT: SAT
+```
 
-### Walksat [best, noise 50 / 100] --> Assignment found
+### Walksat [best, noise 50 / 100]
+Assignment found.
 
+```
 numatom = 729, numclause = 12023, numliterals = 26279
 total elapsed seconds = 0.010000
 average flips per second = 718100
@@ -86,9 +98,12 @@ final numbad level statistics
       nonsuccessful mean numbad std deviation = 0.000000
       nonsuccessful ratio mean numbad to mean std dev = 0.000000
 ASSIGNMENT FOUND
+```
 
+### Walksat [novelty, noise 50 / 100]
+Assignment found
 
-### Walksat [novelty, noise 50 / 100] --> Assignment found
+```
 tail starts after flip = 2187
 total elapsed seconds = 0.010000
 average flips per second = 489800
@@ -114,8 +129,12 @@ final numbad level statistics
       nonsuccessful mean numbad std deviation = 0.000000
       nonsuccessful ratio mean numbad to mean std dev = 0.000000
 ASSIGNMENT FOUND
+```
 
-### Walksat [rnovelty, noise 50 / 100] --> Assignment found
+### Walksat [rnovelty, noise 50 / 100]
+Assignment found
+
+```
 total elapsed seconds = 0.010000
 average flips per second = 429700
 number solutions found = 1
@@ -140,8 +159,12 @@ final numbad level statistics
       nonsuccessful mean numbad std deviation = 0.000000
       nonsuccessful ratio mean numbad to mean std dev = 0.000000
 ASSIGNMENT FOUND
+```
 
-### Walksat [random] --> Assignment not found
+### Walksat [random]
+Assignment not found
+
+```
 total elapsed seconds = 0.870000
 average flips per second = 1149425
 number solutions found = 0
@@ -161,3 +184,4 @@ final numbad level statistics
       nonsuccessful mean numbad std deviation = 13.940760
       nonsuccessful ratio mean numbad to mean std dev = 10.944758
 ASSIGNMENT NOT FOUND
+```
