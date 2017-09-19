@@ -1,6 +1,6 @@
 Solving a sudoku with Pycosat, zChaff, and Walksat
 ==================================================
-from the Kaggle sudoku dataset (1 million sudokus with solutions)
+source: [Kaggle sudoku dataset](https://www.kaggle.com/bryanpark/sudoku?) (1 million sudokus with solutions)
 
 ### Sudoku #1
 
