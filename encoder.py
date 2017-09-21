@@ -271,12 +271,12 @@ def encode_into_number(variable, sample_sudoku):
 #The 'reduction operators' from the paper are basically contained
 #within the if clauses in the function body
 
-def optimised_encoding(encoding, sample_sudoku):
-    assigned = [encode_into_number(x) for x in assigned_variables(sample_sudoku)]
-    false = [encode_into_number(x) for x in create_falsehoods(sample_sudoku)]
+def trim_down_encoding(encoding, sample_sudoku):
+    assigned = [encode_into_number(x, sample_sudoku) for x in assigned_variables(sample_sudoku)]
+    false = [encode_into_number(x, sample_sudoku) for x in create_falsehoods(sample_sudoku)]
     new_encoding = encoding.copy()
-    for clause in new_encoding:
-        for literal in clause:
+    for clause in new_encoding.copy():
+        for literal in clause.copy():
             if literal in assigned:
                 new_encoding.remove(clause)
                 break
@@ -336,6 +336,9 @@ def efficient_encoding(names):
 
     return encoding
 
+def optimised_encoding(names, sample_sudoku):
+    encoding = extended_encoding(names)
+    return trim_down_encoding(encoding, sample_sudoku)
 
 if __name__ == "__main__":
     names, ids = create_sudoku_vars(n = 9)
@@ -356,13 +359,10 @@ if __name__ == "__main__":
                 [0, 0, 3, 5, 0, 8, 6, 9, 0],
                 [0, 4, 2, 9, 1, 0, 3, 0, 0]]
 
-    for i in range(9):
-        for j in range(9):
-            value = s_test[i][j]
-            if value > 0:
-                min_encoding.append([int(names[i, j, value - 1])])
-                ext_encoding.append([int(names[i, j, value - 1])])
-                eff_encoding.append([int(names[i, j, value - 1])])
+def givens(sample_sudoku):
+    return encode_into_number(assigned(sample_sudoku))
+
+print(givens(s_test))
 
     print(to_cnf_string(min_encoding))
     # to_cnf(min_encoding, "min_encod.cnf")
