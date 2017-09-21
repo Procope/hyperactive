@@ -14,16 +14,16 @@ def construct_puzzle_solution():
                     # pick a number for cell (i,j) from the set of remaining available numbers
                     choices = rows[i].intersection(columns[j]).intersection(squares[(i/3)*3 + j/3])
                     choice  = random.choice(list(choices))
-        
+
                     puzzle[i][j] = choice
-        
+
                     rows[i].discard(choice)
                     columns[j].discard(choice)
                     squares[(i/3)*3 + j/3].discard(choice)
 
             # success! every cell is filled.
             return puzzle
-            
+
         except IndexError:
             # if there is an IndexError, we have worked ourselves in a corner (we just start over)
             pass
@@ -45,7 +45,7 @@ def pluck(puzzle, n=0):
         v = puz[c/9][c%9]
         if puz[i][j] == v: return True
         if puz[i][j] in range(1,10): return False
-            
+
         for m in range(9): # test row, col, square
             # if not the cell itself, and the mth cell of the group contains the value v, then "no"
             if not (m==c/9 and j==c%9) and puz[m][j] == v: return False
@@ -64,25 +64,22 @@ def pluck(puzzle, n=0):
         cell = random.choice(list(cellsleft)) # choose a cell from ones we haven't tried
         cellsleft.discard(cell) # record that we are trying this cell
 
-
-            # this is a pluckable cell!
-    	puzzle[cell/9][cell%9] = 0 # 0 denotes a blank cell
+        puzzle[cell/9][cell%9] = 0  # 0 denotes a blank cell
        	cells.discard(cell) # remove from the set of visible cells (pluck it)
-            # we don't need to reset "cellsleft" because if a cell was not pluckable
-            # earlier, then it will still not be pluckable now (with less information
-            # on the board).
+        # we don't need to reset "cellsleft" because if a cell was not pluckable
+        # earlier, then it will still not be pluckable now (with less information
+        # on the board).
 
     # This is the puzzle we found, in all its glory.
     return (puzzle, len(cells))
 
 #use this definition to create a puzzle with n variables inside
 def run(n):
-   	a_puzzle_solution = construct_puzzle_solution()
-	result, number_of_cells = pluck(a_puzzle_solution, n)
+    a_puzzle_solution = construct_puzzle_solution()
+    result, number_of_cells = pluck(a_puzzle_solution, n)
 
-	return result
+    return result
 
-   	
 
 #test
-print run(24)
+print(run(17))
