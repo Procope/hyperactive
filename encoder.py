@@ -7,7 +7,6 @@ def create_sudoku_vars(n=9):
     names = np.zeros([n,n,n], dtype = np.int)
     ids = list()
     ids.append((-1,-1,-1))
-    index = 1
     for i in range(n):
         for j in range(n):
             for k in range(n):
@@ -147,24 +146,53 @@ def exactly_one_block(names):
     return enc1 + enc2
 
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Sep 17 16:20:30 2017
+def to_cnf_file(encoding, filename):
+        with open(filename, 'w') as f:
+            print("p cnf {} {}".format(9**3, len(encoding)), file=f)
+            for clause in encoding:
+                # for literal in clause:
+                print(' ' .join([str(literal) for literal in clause]), end='', file=f)
+                print(" 0", file=f)
+                    # print(literal, " ", end='', file=f)
+                # print("0", file=f)
 
-@author: jackharding
-"""
-import pycosat
-import numpy as np
-from math import sqrt
+def to_cnf_string(encoding):
+    string = "p cnf {} {}\n".format(9**3, len(encoding))
+    for clause in encoding:
+        string += ' ' .join([str(literal) for literal in clause])
+        string += ' 0\n'
+    return string
 
 
+def extended_encoding(names):
+    encoding = []
+    encoding.extend(exactly_one(names))
+    encoding.extend(exactly_one_row(names))
+    encoding.extend(exactly_one_column(names))
+    encoding.extend(exactly_one_block(names))
 
-#READ ME: I think I've used a slightly different indexing convention (sorry!)
-#Under my convention, variables are lists of length 3. They are of the form
-#[row, column, value] (so [1, 1, 1] means the variable which has value 1 in row 1 and column 1)
-#In my mind, this is the most intuitive labelling system, but it shouldn't take any effort to move
-#between the two (though we will need to change either the index on this file or the original one).
+    return encoding
+
+
+def minimal_encoding(names):
+    encoding = []
+    encoding.extend(atleast_cell(names))
+    encoding.extend(atmost_row(names))
+    encoding.extend(atmost_column(names))
+    encoding.extend(atmost_block(names))
+
+    return encoding
+
+
+def efficient_encoding(names):
+    encoding = []
+    encoding.extend(atleast_cell(names))
+    encoding.extend(atmost_cell(names))
+    encoding.extend(atmost_row(names))
+    encoding.extend(atmost_column(names))
+    encoding.extend(atmost_block(names))
+
+    return encoding
 
 
 #function which, given a sudoku, creates a list of the assigned variables
@@ -246,32 +274,31 @@ def all_variables(sample_sudoku):
 def create_falsehoods(sample_sudoku):
     variables = all_variables(sample_sudoku)
     falsehoods = []
-    for truths in assigned_variables(sample_sudoku):
-        for members in variables:
-            if same_Cell(truths, members):
-                falsehoods.append(members)
-            if same_Row(truths, members):
-                falsehoods.append(members)
-            if same_Column(truths, members):
-                falsehoods.append(members)
-            if same_Block(truths, members, length(sample_sudoku)):
-                falsehoods.append(members)
+    for truth in assigned_variables(sample_sudoku):
+        for member in variables:
+            if same_Cell(truth, member):
+                falsehoods.append(member)
+            if same_Row(truth, member):
+                falsehoods.append(member)
+            if same_Column(truth, member):
+                falsehoods.append(member)
+            if same_Block(truth, member, length(sample_sudoku)):
+                falsehoods.append(member)
     return falsehoods
-
 
 #turns a variable "[row, column, value]" into a number
 #(NOTE: using my indexing) Need to check indexing is working correctly.
 def encode_into_number(variable, sample_sudoku):
     row, column, value = variable[0], variable[1], variable[2]
     n = length(sample_sudoku)
-    return (row - 1) * (n**2) + (column - 1) * n + (value - 1) + 1
+    return int((row - 1) * (n**2) + (column - 1) * n + value)
 
 #function which, given an encoding and a sudoku,
 #outputs a trimmed down list of clauses
 #The 'reduction operators' from the paper are basically contained
 #within the if clauses in the function body
 
-def trim_down_encoding(encoding, sample_sudoku):
+def optimised_encoding(encoding, sample_sudoku):
     assigned = [encode_into_number(x, sample_sudoku) for x in assigned_variables(sample_sudoku)]
     false = [encode_into_number(x, sample_sudoku) for x in create_falsehoods(sample_sudoku)]
     new_encoding = encoding.copy()
@@ -289,117 +316,108 @@ def trim_down_encoding(encoding, sample_sudoku):
                 clause.remove(literal)
     return new_encoding
 
+#new_encoding = optimised_encoding(encoding, s_test)
+#print("Number of clauses in old encoding:", len(encoding))
+#print("Number of clauses in new encoding:", len(new_encoding))
+#def variable_counter(encoding):
+#    counter = set()
+#    for clause in encoding:
+#        for literal in clause:
+#            counter.add(literal**2)
+#    return len(counter)
+##
+#print("Number of variables in old encoding:", variable_counter(encoding))
+#print("Number of variables in new encoding:", variable_counter(new_encoding))
 
-def to_cnf_file(encoding, filename):
-        with open(filename, 'w') as f:
-            print("p cnf {} {}".format(9**3, len(encoding)), file=f)
-            for clause in encoding:
-                for literal in clause:
-                    print(literal, " ", end='', file=f)
-                print("0", file=f)
+#function which calculates the top left of the hypersquare a given index is in
+def top_left_hypersquare(variable, length_of_sudoku):
+    top_left = [2,2]
+    row, column = variable.copy()[0], variable.copy()[1]
+    while row > sqrt(length_of_sudoku) + 1:
+        row -= sqrt(length_of_sudoku) + 1
+        top_left[0] += int(sqrt(length_of_sudoku) + 1)
+    while column > sqrt(length_of_sudoku) + 1:
+        column -= sqrt(length_of_sudoku) + 1
+        top_left[1] += int(sqrt(length_of_sudoku) + 1)
+    if row == 1:
+        return None
+    if column == 1:
+        return None
+    return top_left
 
-def to_cnf_string(encoding):
-    string = "p cnf {} {}\n".format(9**3, len(encoding))
-    for clause in encoding:
-        string += ' ' .join([str(literal) for literal in clause])
-        string += ' 0\n'
-    return string
+#function which, given two variables, decides if they are in the same hypersquare with
+#the same value
+def incompatible_hyperBlock(var_1, var_2, length_of_sudoku):
+    if var_1 == var_2:
+        return False
+    if top_left_hypersquare(var_1, length_of_sudoku) == None:
+        return False
+    if top_left_hypersquare(var_2, length_of_sudoku) == None:
+        return False
+    if var_1[2] == var_2[2]:
+        if top_left_hypersquare(var_1, length_of_sudoku) == top_left_hypersquare(var_2, length_of_sudoku):
+            return True
+    return False
 
+#function which outputs a list of hypersquare top left coordinates
+def generate_top_left_of_hypersquares(length_of_sudoku):
+    top_lefts_list = []
+    for row in range(2, length_of_sudoku + 1, int(sqrt(length_of_sudoku) + 1)):
+        for column in range(2, length_of_sudoku + 1, int(sqrt(length_of_sudoku) + 1)):
+            top_lefts_list.append([row, column])
+    return top_lefts_list
 
-def extended_encoding(names):
+#function which says every number must appear at least once in each hypersquare
+def at_least_hypersquare(sample_sudoku):
+    length_of_sudoku = len(sample_sudoku)
     encoding = []
-    encoding.extend(exactly_one(names))
-    encoding.extend(exactly_one_row(names))
-    encoding.extend(exactly_one_column(names))
-    encoding.extend(exactly_one_block(names))
-
+    for top_lefts in generate_top_left_of_hypersquares(length_of_sudoku):
+        for row in range(int(sqrt(length_of_sudoku))):
+            for column in range(int(sqrt(length_of_sudoku))):
+                encoding.append([])
+                for value in range(1, length_of_sudoku + 1):
+                    encoding[-1].append(encode_into_number([top_lefts[0] + row, top_lefts[1] + column, value], sample_sudoku))
     return encoding
 
+#print(at_least_hypersquare(81))
 
-def minimal_encoding(names):
+#function which says every number can appear at most once in each hypersquare(NEEDS OPTMISING)
+def at_most_hypersquare(sample_sudoku):
+    length_of_sudoku = len(sample_sudoku)
     encoding = []
-    encoding.extend(atleast_cell(names))
-    encoding.extend(atmost_row(names))
-    encoding.extend(atmost_column(names))
-    encoding.extend(atmost_block(names))
-
+    for var1 in all_variables(sample_sudoku):
+        for var2 in all_variables(sample_sudoku):
+                            if incompatible_hyperBlock(var1, var2, length_of_sudoku):
+                                encoding.append([-encode_into_number(var1, sample_sudoku), -encode_into_number(var2, sample_sudoku)])
     return encoding
 
+def exactly_one_hypersquare(sample_sudoku):
+    return at_least_hypersquare(sample_sudoku) + at_most_hypersquare(sample_sudoku)
 
-def efficient_encoding(names):
-    encoding = []
-    encoding.extend(atleast_cell(names))
-    encoding.extend(atmost_cell(names))
-    encoding.extend(atmost_row(names))
-    encoding.extend(atmost_column(names))
-    encoding.extend(atmost_block(names))
-
-    return encoding
-
-def optimised_encoding(names, sample_sudoku):
-    encoding = extended_encoding(names)
-    return trim_down_encoding(encoding, sample_sudoku)
-
-if __name__ == "__main__":
-    names, ids = create_sudoku_vars(n = 9)
-
-    min_encoding = minimal_encoding(names)
-    ext_encoding = extended_encoding(names)
-    eff_encoding = efficient_encoding(names)
-
-    # # print(encoding)
-
-    s_test = [[0, 0, 4, 3, 0, 0, 2, 0, 9],
-                [0, 0, 5, 0, 0, 9, 0, 0, 1],
-                [0, 7, 0, 0, 6, 0, 0, 4, 3],
-                [0, 0, 6, 0, 0, 2, 0, 8, 7],
-                [1, 9, 0, 0, 0, 7, 4, 0, 0],
-                [0, 5, 0, 0, 8, 3, 0, 0, 0],
-                [6, 0, 0, 0, 0, 0, 1, 0, 5],
-                [0, 0, 3, 5, 0, 8, 6, 9, 0],
-                [0, 4, 2, 9, 1, 0, 3, 0, 0]]
-
-def givens(sample_sudoku):
-    return encode_into_number(assigned(sample_sudoku))
-
-print(givens(s_test))
-
-    print(to_cnf_string(min_encoding))
-    # to_cnf(min_encoding, "min_encod.cnf")
-    # to_cnf(ext_encoding, "ext_encod.cnf")
-    # to_cnf(eff_encoding, "eff_encod.cnf")
-
-    # solution = pycosat.solve(encoding)
-    # sol = np.zeros((9,9), dtype=np.int)
-    # for s in solution:
-    #     if s > 0:
-    #         (i,j,k) = ids[s]
-    #         sol[i-1][j-1] = k
-    # print(sol)
-
-    # i = 0
-    # for s in pycosat.itersolve(encoding):
-    #     i += 1
-    #     if i % 1000 == 0:
-    #         print(i)
-# print(optimised_encoding(encoding, s_test))
+#
+#
+#implementing an optimised encoding for a hypersudoku
+#
+#
 
 
-    # solution = [8, 15, 22, 30, 43, 46, 56, 68, 81, 84, 92,
-    #  104, 116, 121, 135, 142, 150, 154, 171, 178, 181,
-    #   191, 204, 212, 224, 229, 237, 247, 255, 267,271,
-    #   288, 290, 302, 314, 322, 325, 342, 350, 357, 365,
-    #   376, 382, 390, 398, 407, 419, 430, 436, 449, 453,
-    #   468, 469, 483, 492, 503, 513, 520, 525, 535, 541,
-    #   551, 563, 574, 577, 588, 599, 605, 620, 627, 639,
-    #   643, 653, 661, 668, 684, 685, 699, 705, 718, 728]
+#function which, given all the variables, creates a list of the hyper_variables which the assignment renders immediately false
+#e.g. if [1, 1, 1] is in "assigned", this list will include [2, 1, 1], [3, 1, 1], etc
+def create_hyper_falsehoods(sample_sudoku):
+    variables = all_variables(sample_sudoku)
+    falsehoods = []
+    for truth in assigned_variables(sample_sudoku):
+        for member in variables:
+            if same_Cell(truth, member):
+                falsehoods.append(member)
+            if same_Row(truth, member):
+                falsehoods.append(member)
+            if same_Column(truth, member):
+                falsehoods.append(member)
+            if same_Block(truth, member, length(sample_sudoku)):
+                falsehoods.append(member)
+            if incompatible_hyperBlock(truth, member, length(sample_sudoku)):
+                falsehoods.append(member)
+    return falsehoods
 
-    #   8, 15, 22, 30, 43, 46, 56, 68, 81, 84, 92, 104, 116, 121, 135, 142, 150, 154, 171, 178, 181, 191, 204, 212, 224, 229, 237, 247, 255, 267, 271, 288, 290, 302, 314, 322, 325, 342, 350, 357, 365, 376, 382, 390, 398, 407, 419, 430, 436, 449, 453, 468, 469, 483, 492, 503, 513, 520, 525, 535, 541, 551, 563, 574, 577, 588, 599, 605, 620, 627, 639, 643, 653, 661, 668, 684, 685, 699, 705, 718, 728
 
-    # sol = np.zeros((9,9), dtype=np.int)
-    # for s in solution:
-    #     if s > 0:
-    #         (i,j,k) = ids[s]
-    #         sol[i-1][j-1] = k
-
-    # print(sol)

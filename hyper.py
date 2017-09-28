@@ -2,25 +2,18 @@ import numpy as np
 import pycosat
 import subprocess
 import tempfile
-from encoder import create_sudoku_vars, minimal_encoding, extended_encoding, efficient_encoding, to_cnf_string, to_cnf_file, optimised_encoding
+from encoder import create_sudoku_vars, minimal_encoding, extended_encoding, efficient_encoding, to_cnf_string, to_cnf_file, optimised_encoding, exactly_one_hypersquare
 
 
-def get_data(filename, n_sudokus=1000):
+def get_data(filename, n_sudokus=100):
     quizzes = np.zeros((n_sudokus, 81), np.int32)
-    solutions = np.zeros((n_sudokus, 81), np.int32)
-    for i, line in enumerate(open(filename, 'r').read().splitlines()[1:]):
 
+    for i, line in enumerate(open(filename, 'r').read().splitlines()):
         if i >= n_sudokus:
             break;
 
-        quiz, solution = line.split(",")
-        for j, q_s in enumerate(zip(quiz, solution)):
-            q, s = q_s
-            quizzes[i, j] = q
-            solutions[i, j] = s
-
-    return quizzes.reshape((-1, 9, 9)), solutions.reshape((-1, 9, 9))
-
+        quizzes[i] = list(map(int,line.split(",")))
+    return quizzes.reshape((-1, 9, 9))
 
 def solution_to_array(cnf_solution, indices):
     sol_array = np.zeros((9,9), dtype=np.int)
@@ -32,11 +25,10 @@ def solution_to_array(cnf_solution, indices):
 
 
 if __name__ == "__main__":
-    n_samples = 1000
-    quizzes, solutions = get_data('/Users/mario/Documents/Uni/WS1718/KR/data/sudoku.csv', n_samples)
+    n_samples = 100
+    quizzes = get_data('/Users/mario/Documents/Uni/WS1718/KR/data/hyper.txt', n_samples)
 
     print("Shape of quizzes:", quizzes.shape)
-    print("Shape of solutions:", solutions.shape)
 
     names, indices = create_sudoku_vars(n = 9)
 
@@ -48,18 +40,21 @@ if __name__ == "__main__":
     walksat_overall_stats = list()
 
     for idx, quiz in enumerate(quizzes):
-        if idx % 100 == 0:
-            print(idx, "quizzes solved.")
+        print(idx, "quizzes solved.")
 
         # opt_encod_cnf = to_cnf_string(optimised_encoding(ext_encoding, quiz))
         # to_cnf_file(optimised_encoding(ext_encoding, quiz), 'opt2.cnf')
         # print(optimised_encoding(ext_encoding, quiz))
 
+        min_encoding.extend(exactly_one_hypersquare(quiz))
+        eff_encoding.extend(exactly_one_hypersquare(quiz))
+        ext_encoding.extend(exactly_one_hypersquare(quiz))
+
         encodings = [e.copy() for e in [min_encoding, eff_encoding, ext_encoding]]
 
-        # pycosat_solution = pycosat.solve(optimised_encoding(ext_encoding, quiz))
-        # sol_array = solution_to_array(pycosat_solution, indices)
-        # print(solutions)
+#         pycosat_solution = pycosat.solve(optimised_encoding(ext_encoding, quiz))
+#         sol_array = solution_to_array(pycosat_solution, indices)
+#         print(solutions)
 
         for i in range(9):
             for j in range(9):
@@ -68,7 +63,6 @@ if __name__ == "__main__":
                     pos_literal = [int(names[i, j, value - 1])]
                     for e in encodings:
                         e.append(pos_literal)
-
 
         min_encod_cnf = to_cnf_string(encodings[0])
         eff_encod_cnf = to_cnf_string(encodings[1])
@@ -92,13 +86,6 @@ if __name__ == "__main__":
             end_zchaff_solution = zchaff_stats.find('Random Seed') - 1
             zchaff_cnf_solution = list(map(int, zchaff_stats[begin_zchaff_solution: end_zchaff_solution].split(' ')))
 
-            if not np.array_equal(solution_to_array(zchaff_cnf_solution, indices), solutions[idx]):
-                print('Original solution:')
-                print(solutions[idx])
-                print('zChaff solution:')
-                print(solution_to_array(zchaff_cnf_solution, indices))
-                # print(zchaff_cnf_solution)
-
             begin_zchaff_stats = zchaff_stats.find('Max Decision Level')
             zchaff_stats_list = zchaff_stats[begin_zchaff_stats:].replace('\t', ' ').replace('  ', '    ').replace('\n', '    ').split("    ")
             zchaff_stats_list = [x for x in zchaff_stats_list if x != '']
@@ -109,7 +96,6 @@ if __name__ == "__main__":
             if end_walksat_stats < 0:
                 print(walksat_stats)
             walksat_stats_list = [x.split("=") for x in walksat_stats[begin_walksat_stats:end_walksat_stats].split("\n")]
-
 
             zchaff_stats_dict = {}
             for j in range(0, len(zchaff_stats_list)-1, 2):
