@@ -81,8 +81,7 @@ if __name__ == "__main__":
         opt_encod_cnf = to_cnf_string(encodings[3])
 
 
-        for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf]):
-        # for i, e in enumerate([opt_encod_cnf]):
+        for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf, opt_encod_cnf]):
             tmp = tempfile.NamedTemporaryFile()
             tmp.write(e.encode('utf-8'))
 
