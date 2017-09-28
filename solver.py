@@ -69,10 +69,16 @@ if __name__ == "__main__":
                     for e in encodings:
                         e.append(pos_literal)
 
-
+                        
         min_encod_cnf = to_cnf_string(encodings[0])
         eff_encod_cnf = to_cnf_string(encodings[1])
         ext_encod_cnf = to_cnf_string(encodings[2])
+        
+        #This is just a rough suggestion, so let me know if it doesn't work. Hopefully
+        #you should get the idea from it though
+        
+        encodings.append(optimised_encoding(encoding, quiz))
+        opt_encod_cnf = to_cnf_string(encodings[3])
 
 
         for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf]):
