@@ -314,6 +314,10 @@ def optimised_encoding(encoding, sample_sudoku):
                 clause.remove(literal)
             if -literal in assigned:
                 clause.remove(literal)
+    for literal in assigned:
+        new_encoding.append([literal])
+    for literal in false:
+        new_encoding.append([-literal])
     return new_encoding
 
 #new_encoding = optimised_encoding(encoding, s_test)
