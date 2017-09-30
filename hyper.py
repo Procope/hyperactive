@@ -25,7 +25,8 @@ def solution_to_array(cnf_solution, indices):
 
 
 if __name__ == "__main__":
-    n_samples = 100
+    n_samples = 10
+
     quizzes = get_data('/Users/mario/Documents/Uni/WS1718/KR/data/hyper.txt', n_samples)
 
     print("Shape of quizzes:", quizzes.shape)
@@ -77,7 +78,7 @@ if __name__ == "__main__":
             zchaff_result = subprocess.run(['../zchaff64/zchaff', tmp.name], stdout=subprocess.PIPE)
             zchaff_stats = zchaff_result.stdout.decode('utf-8')
 
-            walksat_result = subprocess.run(['../Walksat_v51/walksat', '-rnovelty', tmp.name], stdout=subprocess.PIPE)
+            walksat_result = subprocess.run(['../Walksat_v51/walksat', '-best', tmp.name], stdout=subprocess.PIPE)
             walksat_stats = walksat_result.stdout.decode('utf-8')
 
             tmp.close()

@@ -32,7 +32,7 @@ def solution_to_array(cnf_solution, indices):
 
 
 if __name__ == "__main__":
-    n_samples = 1000
+    n_samples = 3
     quizzes, solutions = get_data('/Users/mario/Documents/Uni/WS1718/KR/data/sudoku.csv', n_samples)
 
     print("Shape of quizzes:", quizzes.shape)
@@ -51,11 +51,10 @@ if __name__ == "__main__":
         if idx % 100 == 0:
             print(idx, "quizzes solved.")
 
-        # opt_encod_cnf = to_cnf_string(optimised_encoding(ext_encoding, quiz))
-        # to_cnf_file(optimised_encoding(ext_encoding, quiz), 'opt2.cnf')
-        # print(optimised_encoding(ext_encoding, quiz))
-
         encodings = [e.copy() for e in [min_encoding, eff_encoding, ext_encoding]]
+
+        opt_encoding = optimised_encoding(ext_encoding, quiz)
+        opt_encod_cnf = to_cnf_string(opt_encoding)
 
         # pycosat_solution = pycosat.solve(optimised_encoding(ext_encoding, quiz))
         # sol_array = solution_to_array(pycosat_solution, indices)
@@ -69,19 +68,22 @@ if __name__ == "__main__":
                     for e in encodings:
                         e.append(pos_literal)
 
-                        
+
         min_encod_cnf = to_cnf_string(encodings[0])
         eff_encod_cnf = to_cnf_string(encodings[1])
         ext_encod_cnf = to_cnf_string(encodings[2])
-        
+
+
+
+      # for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf, opt_encod_cnf]):
+
+
         #This is just a rough suggestion, so let me know if it doesn't work. Hopefully
         #you should get the idea from it though
-        
-        encodings.append(optimised_encoding(encoding, quiz))
-        opt_encod_cnf = to_cnf_string(encodings[3])
 
 
         for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf, opt_encod_cnf]):
+
             tmp = tempfile.NamedTemporaryFile()
             tmp.write(e.encode('utf-8'))
 
@@ -95,14 +97,18 @@ if __name__ == "__main__":
 
             begin_zchaff_solution = zchaff_stats.find('Instance Satisfiable\n') + len('Instance Satisfiable\n')
             end_zchaff_solution = zchaff_stats.find('Random Seed') - 1
-            zchaff_cnf_solution = list(map(int, zchaff_stats[begin_zchaff_solution: end_zchaff_solution].split(' ')))
+            try:
+                zchaff_cnf_solution = list(map(int, zchaff_stats[begin_zchaff_solution: end_zchaff_solution].split(' ')))
+            except ValueError:
+                print("Problem with zchaff. Output:\n", zchaff_stats)
 
             if not np.array_equal(solution_to_array(zchaff_cnf_solution, indices), solutions[idx]):
+                print(quizzes[idx])
                 print('Original solution:')
                 print(solutions[idx])
                 print('zChaff solution:')
                 print(solution_to_array(zchaff_cnf_solution, indices))
-                # print(zchaff_cnf_solution)
+
 
             begin_zchaff_stats = zchaff_stats.find('Max Decision Level')
             zchaff_stats_list = zchaff_stats[begin_zchaff_stats:].replace('\t', ' ').replace('  ', '    ').replace('\n', '    ').split("    ")

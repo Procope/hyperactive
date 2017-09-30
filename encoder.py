@@ -150,17 +150,17 @@ def to_cnf_file(encoding, filename):
         with open(filename, 'w') as f:
             print("p cnf {} {}".format(9**3, len(encoding)), file=f)
             for clause in encoding:
-                # for literal in clause:
-                print(' ' .join([str(literal) for literal in clause]), end='', file=f)
-                print(" 0", file=f)
-                    # print(literal, " ", end='', file=f)
-                # print("0", file=f)
+                if len(clause) > 0:
+                    print(' ' .join([str(literal) for literal in clause]), end='', file=f)
+                    print(" 0", file=f)
+
 
 def to_cnf_string(encoding):
     string = "p cnf {} {}\n".format(9**3, len(encoding))
     for clause in encoding:
-        string += ' ' .join([str(literal) for literal in clause])
-        string += ' 0\n'
+        if len(clause) > 0:
+            string += ' ' .join([str(literal) for literal in clause])
+            string += ' 0\n'
     return string
 
 

@@ -1,10 +1,10 @@
 import numpy as np
-quizzes = np.zeros((1000, 81), np.int32)
-solutions = np.zeros((1000, 81), np.int32)
+quizzes = np.zeros((1000000, 81), np.int32)
+solutions = np.zeros((1000000, 81), np.int32)
 for i, line in enumerate(open('/Users/mario/Documents/Uni/WS1718/KR/data/sudoku.csv', 'r').read().splitlines()[1:]):
 
-    if i >= 1000:
-        break;
+    # if i >= 1000:
+    #     break;
 
     quiz, solution = line.split(",")
     for j, q_s in enumerate(zip(quiz, solution)):
