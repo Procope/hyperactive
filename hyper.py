@@ -1,11 +1,18 @@
 import numpy as np
+
 import pycosat
+
 import subprocess
 import tempfile
-from encoder import create_sudoku_vars, minimal_encoding, extended_encoding, efficient_encoding, to_cnf_string, to_cnf_file, optimised_encoding, exactly_one_hypersquare
+import argparse
+
+from encoder import create_sudoku_vars, minimal_encoding, extended_encoding, efficient_encoding, to_cnf_string, exactly_one_hypersquare
 
 
 def get_data(filename, n_sudokus=100):
+    """
+    Load Hyper Sudokus from data set (as a list of matrices).
+    """
     quizzes = np.zeros((n_sudokus, 81), np.int32)
 
     for i, line in enumerate(open(filename, 'r').read().splitlines()):
@@ -15,7 +22,11 @@ def get_data(filename, n_sudokus=100):
         quizzes[i] = list(map(int,line.split(",")))
     return quizzes.reshape((-1, 9, 9))
 
-def solution_to_array(cnf_solution, indices):
+
+def decode_solution(cnf_solution, indices):
+    """
+    Decode a DIMACS solution into a sudoku matrix.
+    """
     sol_array = np.zeros((9,9), dtype=np.int)
     for literal in cnf_solution:
             if literal > 0:
@@ -25,10 +36,14 @@ def solution_to_array(cnf_solution, indices):
 
 
 if __name__ == "__main__":
-    n_samples = 10
+    parser = argparse.ArgumentParser("hyper")
+    parser.add_argument("path", type=str)
+    parser.add_argument("num_sudokus", type=int)
+    parser.add_argument("variant", help="best, novelty, rnovelty", type=str)
 
-    quizzes = get_data('/Users/mario/Documents/Uni/WS1718/KR/data/hyper.txt', n_samples)
+    args = parser.parse_args()
 
+    quizzes = get_data(args.path, args.num_sudokus)
     print("Shape of quizzes:", quizzes.shape)
 
     names, indices = create_sudoku_vars(n = 9)
@@ -41,21 +56,11 @@ if __name__ == "__main__":
     walksat_overall_stats = list()
 
     for idx, quiz in enumerate(quizzes):
-        print(idx, "quizzes solved.")
-
-        # opt_encod_cnf = to_cnf_string(optimised_encoding(ext_encoding, quiz))
-        # to_cnf_file(optimised_encoding(ext_encoding, quiz), 'opt2.cnf')
-        # print(optimised_encoding(ext_encoding, quiz))
-
         min_encoding.extend(exactly_one_hypersquare(quiz))
         eff_encoding.extend(exactly_one_hypersquare(quiz))
         ext_encoding.extend(exactly_one_hypersquare(quiz))
 
         encodings = [e.copy() for e in [min_encoding, eff_encoding, ext_encoding]]
-
-#         pycosat_solution = pycosat.solve(optimised_encoding(ext_encoding, quiz))
-#         sol_array = solution_to_array(pycosat_solution, indices)
-#         print(solutions)
 
         for i in range(9):
             for j in range(9):
@@ -71,18 +76,22 @@ if __name__ == "__main__":
 
 
         for i, e in enumerate([min_encod_cnf, eff_encod_cnf, ext_encod_cnf]):
-        # for i, e in enumerate([opt_encod_cnf]):
             tmp = tempfile.NamedTemporaryFile()
             tmp.write(e.encode('utf-8'))
 
+            # write zChaff result to temporary file
             zchaff_result = subprocess.run(['../zchaff64/zchaff', tmp.name], stdout=subprocess.PIPE)
             zchaff_stats = zchaff_result.stdout.decode('utf-8')
 
-            walksat_result = subprocess.run(['../Walksat_v51/walksat', '-best', tmp.name], stdout=subprocess.PIPE)
+            # write WalkSAT result to temporary file
+            walksat_result = subprocess.run(['../Walksat_v51/walksat', '-' + args.variant, tmp.name], stdout=subprocess.PIPE)
             walksat_stats = walksat_result.stdout.decode('utf-8')
 
             tmp.close()
 
+            #
+            # Parse results.
+            #
             begin_zchaff_solution = zchaff_stats.find('Instance Satisfiable\n') + len('Instance Satisfiable\n')
             end_zchaff_solution = zchaff_stats.find('Random Seed') - 1
             zchaff_cnf_solution = list(map(int, zchaff_stats[begin_zchaff_solution: end_zchaff_solution].split(' ')))
@@ -98,6 +107,7 @@ if __name__ == "__main__":
                 print(walksat_stats)
             walksat_stats_list = [x.split("=") for x in walksat_stats[begin_walksat_stats:end_walksat_stats].split("\n")]
 
+            # zChaff stats
             zchaff_stats_dict = {}
             for j in range(0, len(zchaff_stats_list)-1, 2):
                 if zchaff_stats_list[j] == '( Stack + Vsids + Shrinking Decisions )':
@@ -106,14 +116,14 @@ if __name__ == "__main__":
 
             for stat, value in zchaff_stats_dict.items():
                 try:
-                    zchaff_overall_stats[i][stat] += float(value)
+                    zchaff_overall_stats[i][stat].append(float(value))
                 except IndexError:
                     zchaff_overall_stats.append(dict())
-                    zchaff_overall_stats[i][stat] = float(value)
+                    zchaff_overall_stats[i][stat] = [float(value)]
                 except KeyError:
-                    zchaff_overall_stats[i][stat] = float(value)
+                    zchaff_overall_stats[i][stat] = [float(value)]
 
-            # # WALKSAT
+            # WalkSAT stats
             for key_value in walksat_stats_list:
                 if len(key_value) != 2:
                     continue
@@ -121,34 +131,35 @@ if __name__ == "__main__":
                 stat = key_value[0].strip()
                 value = key_value[1].strip()
                 try:
-                    walksat_overall_stats[i][stat] += float(value)
+                    walksat_overall_stats[i][stat].append(float(value))
                 except IndexError:
                     walksat_overall_stats.append(dict())
-                    walksat_overall_stats[i][stat] = float(value)
+                    walksat_overall_stats[i][stat] = [float(value)]
                 except KeyError:
-                    walksat_overall_stats[i][stat] = float(value)
+                    walksat_overall_stats[i][stat] = [float(value)]
 
-    print('\n\nZchaff with (1) minimal encoding, (2) efficient encoding, (3) extended encoding, (4) optimised encoding \n')
+        if idx >= 10 and idx % 10 == 0:
+            print(idx + 1, "quizzes solved.")
+
+    #
+    # Print statistics to standard output.
+    #
+    print('\n\nZchaff with (1) minimal encoding, (2) efficient encoding, (3) extended encoding\n')
     for j, stats in enumerate(zchaff_overall_stats):
         print("Encoding ({})".format(j+1))
         for key in stats.keys():
-            print(key, stats[key]/n_samples)
+            values = np.array(stats[key])
+            print(key)
+            print("  Mean : {}".format(values.mean()))
+            print("  Standard deviation: {}".format(values.std(ddof=1)))
         print()
 
-    print('Walksat with (1) minimal encoding, (2) efficient encoding, (3) extended encoding, (4) optimised encoding \n')
+    print('Walksat with (1) minimal encoding, (2) efficient encoding, (3) extended encoding\n')
     for j, stats in enumerate(walksat_overall_stats):
         print("Encoding ({})".format(j+1))
         for key in stats.keys():
-            print(key, stats[key]/n_samples)
+            values = np.array(stats[key])
+            print(key)
+            print("  Mean : {}".format(values.mean()))
+            print("  Standard deviation: {}".format(values.std(ddof=1)))
         print()
-
-
-
-        # pycosat_solution = pycosat.solve(optimised_encoding(ext_encoding, quiz))
-        # sol_array = solution_to_array(pycosat_solution, indices)
-        # print(solutions)
-        # if not np.array_equal(sol_array, solutions[idx]):
-        #     print('Original solution:')
-        #     print(solutions[idx])
-        #     print('SAT solution:')
-        #     print(sol_array)

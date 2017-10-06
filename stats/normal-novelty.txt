@@ -1,0 +1,1345 @@
+Shape of quizzes: (1000, 9, 9)
+Shape of solutions: (1000, 9, 9)
+0 quizzes solved.
+1 quizzes solved.
+2 quizzes solved.
+3 quizzes solved.
+4 quizzes solved.
+5 quizzes solved.
+6 quizzes solved.
+7 quizzes solved.
+8 quizzes solved.
+9 quizzes solved.
+10 quizzes solved.
+11 quizzes solved.
+12 quizzes solved.
+13 quizzes solved.
+14 quizzes solved.
+15 quizzes solved.
+16 quizzes solved.
+17 quizzes solved.
+18 quizzes solved.
+19 quizzes solved.
+20 quizzes solved.
+21 quizzes solved.
+22 quizzes solved.
+23 quizzes solved.
+24 quizzes solved.
+25 quizzes solved.
+26 quizzes solved.
+27 quizzes solved.
+28 quizzes solved.
+29 quizzes solved.
+30 quizzes solved.
+31 quizzes solved.
+32 quizzes solved.
+33 quizzes solved.
+34 quizzes solved.
+35 quizzes solved.
+36 quizzes solved.
+37 quizzes solved.
+38 quizzes solved.
+39 quizzes solved.
+40 quizzes solved.
+41 quizzes solved.
+42 quizzes solved.
+43 quizzes solved.
+44 quizzes solved.
+45 quizzes solved.
+46 quizzes solved.
+47 quizzes solved.
+48 quizzes solved.
+49 quizzes solved.
+50 quizzes solved.
+51 quizzes solved.
+52 quizzes solved.
+53 quizzes solved.
+54 quizzes solved.
+55 quizzes solved.
+56 quizzes solved.
+57 quizzes solved.
+58 quizzes solved.
+59 quizzes solved.
+60 quizzes solved.
+61 quizzes solved.
+62 quizzes solved.
+63 quizzes solved.
+64 quizzes solved.
+65 quizzes solved.
+66 quizzes solved.
+67 quizzes solved.
+68 quizzes solved.
+69 quizzes solved.
+70 quizzes solved.
+71 quizzes solved.
+72 quizzes solved.
+73 quizzes solved.
+74 quizzes solved.
+75 quizzes solved.
+76 quizzes solved.
+77 quizzes solved.
+78 quizzes solved.
+79 quizzes solved.
+80 quizzes solved.
+81 quizzes solved.
+82 quizzes solved.
+83 quizzes solved.
+84 quizzes solved.
+85 quizzes solved.
+86 quizzes solved.
+87 quizzes solved.
+88 quizzes solved.
+89 quizzes solved.
+90 quizzes solved.
+91 quizzes solved.
+92 quizzes solved.
+93 quizzes solved.
+94 quizzes solved.
+95 quizzes solved.
+96 quizzes solved.
+97 quizzes solved.
+98 quizzes solved.
+99 quizzes solved.
+100 quizzes solved.
+100 quizzes solved.
+101 quizzes solved.
+102 quizzes solved.
+103 quizzes solved.
+104 quizzes solved.
+105 quizzes solved.
+106 quizzes solved.
+107 quizzes solved.
+108 quizzes solved.
+109 quizzes solved.
+110 quizzes solved.
+111 quizzes solved.
+112 quizzes solved.
+113 quizzes solved.
+114 quizzes solved.
+115 quizzes solved.
+116 quizzes solved.
+117 quizzes solved.
+118 quizzes solved.
+119 quizzes solved.
+120 quizzes solved.
+121 quizzes solved.
+122 quizzes solved.
+123 quizzes solved.
+124 quizzes solved.
+125 quizzes solved.
+126 quizzes solved.
+127 quizzes solved.
+128 quizzes solved.
+129 quizzes solved.
+130 quizzes solved.
+131 quizzes solved.
+132 quizzes solved.
+133 quizzes solved.
+134 quizzes solved.
+135 quizzes solved.
+136 quizzes solved.
+137 quizzes solved.
+138 quizzes solved.
+139 quizzes solved.
+140 quizzes solved.
+141 quizzes solved.
+142 quizzes solved.
+143 quizzes solved.
+144 quizzes solved.
+145 quizzes solved.
+146 quizzes solved.
+147 quizzes solved.
+148 quizzes solved.
+149 quizzes solved.
+150 quizzes solved.
+151 quizzes solved.
+152 quizzes solved.
+153 quizzes solved.
+154 quizzes solved.
+155 quizzes solved.
+156 quizzes solved.
+157 quizzes solved.
+158 quizzes solved.
+159 quizzes solved.
+160 quizzes solved.
+161 quizzes solved.
+162 quizzes solved.
+163 quizzes solved.
+164 quizzes solved.
+165 quizzes solved.
+166 quizzes solved.
+167 quizzes solved.
+168 quizzes solved.
+169 quizzes solved.
+170 quizzes solved.
+171 quizzes solved.
+172 quizzes solved.
+173 quizzes solved.
+174 quizzes solved.
+175 quizzes solved.
+176 quizzes solved.
+177 quizzes solved.
+178 quizzes solved.
+179 quizzes solved.
+180 quizzes solved.
+181 quizzes solved.
+182 quizzes solved.
+183 quizzes solved.
+184 quizzes solved.
+185 quizzes solved.
+186 quizzes solved.
+187 quizzes solved.
+188 quizzes solved.
+189 quizzes solved.
+190 quizzes solved.
+191 quizzes solved.
+192 quizzes solved.
+193 quizzes solved.
+194 quizzes solved.
+195 quizzes solved.
+196 quizzes solved.
+197 quizzes solved.
+198 quizzes solved.
+199 quizzes solved.
+200 quizzes solved.
+200 quizzes solved.
+201 quizzes solved.
+202 quizzes solved.
+203 quizzes solved.
+204 quizzes solved.
+205 quizzes solved.
+206 quizzes solved.
+207 quizzes solved.
+208 quizzes solved.
+209 quizzes solved.
+210 quizzes solved.
+211 quizzes solved.
+212 quizzes solved.
+213 quizzes solved.
+214 quizzes solved.
+215 quizzes solved.
+216 quizzes solved.
+217 quizzes solved.
+218 quizzes solved.
+219 quizzes solved.
+220 quizzes solved.
+221 quizzes solved.
+222 quizzes solved.
+223 quizzes solved.
+224 quizzes solved.
+225 quizzes solved.
+226 quizzes solved.
+227 quizzes solved.
+228 quizzes solved.
+229 quizzes solved.
+230 quizzes solved.
+231 quizzes solved.
+232 quizzes solved.
+233 quizzes solved.
+234 quizzes solved.
+235 quizzes solved.
+236 quizzes solved.
+237 quizzes solved.
+238 quizzes solved.
+239 quizzes solved.
+240 quizzes solved.
+241 quizzes solved.
+242 quizzes solved.
+243 quizzes solved.
+244 quizzes solved.
+245 quizzes solved.
+246 quizzes solved.
+247 quizzes solved.
+248 quizzes solved.
+249 quizzes solved.
+250 quizzes solved.
+251 quizzes solved.
+252 quizzes solved.
+253 quizzes solved.
+254 quizzes solved.
+255 quizzes solved.
+256 quizzes solved.
+257 quizzes solved.
+258 quizzes solved.
+259 quizzes solved.
+260 quizzes solved.
+261 quizzes solved.
+262 quizzes solved.
+263 quizzes solved.
+264 quizzes solved.
+265 quizzes solved.
+266 quizzes solved.
+267 quizzes solved.
+268 quizzes solved.
+269 quizzes solved.
+270 quizzes solved.
+271 quizzes solved.
+272 quizzes solved.
+273 quizzes solved.
+274 quizzes solved.
+275 quizzes solved.
+276 quizzes solved.
+277 quizzes solved.
+278 quizzes solved.
+279 quizzes solved.
+280 quizzes solved.
+281 quizzes solved.
+282 quizzes solved.
+283 quizzes solved.
+284 quizzes solved.
+285 quizzes solved.
+286 quizzes solved.
+287 quizzes solved.
+288 quizzes solved.
+289 quizzes solved.
+290 quizzes solved.
+291 quizzes solved.
+292 quizzes solved.
+293 quizzes solved.
+294 quizzes solved.
+295 quizzes solved.
+296 quizzes solved.
+297 quizzes solved.
+298 quizzes solved.
+299 quizzes solved.
+300 quizzes solved.
+300 quizzes solved.
+301 quizzes solved.
+302 quizzes solved.
+303 quizzes solved.
+304 quizzes solved.
+305 quizzes solved.
+306 quizzes solved.
+307 quizzes solved.
+308 quizzes solved.
+309 quizzes solved.
+310 quizzes solved.
+311 quizzes solved.
+312 quizzes solved.
+313 quizzes solved.
+314 quizzes solved.
+315 quizzes solved.
+316 quizzes solved.
+317 quizzes solved.
+318 quizzes solved.
+319 quizzes solved.
+320 quizzes solved.
+321 quizzes solved.
+322 quizzes solved.
+323 quizzes solved.
+324 quizzes solved.
+325 quizzes solved.
+326 quizzes solved.
+327 quizzes solved.
+328 quizzes solved.
+329 quizzes solved.
+330 quizzes solved.
+331 quizzes solved.
+332 quizzes solved.
+333 quizzes solved.
+334 quizzes solved.
+335 quizzes solved.
+336 quizzes solved.
+337 quizzes solved.
+338 quizzes solved.
+339 quizzes solved.
+340 quizzes solved.
+341 quizzes solved.
+342 quizzes solved.
+343 quizzes solved.
+344 quizzes solved.
+345 quizzes solved.
+346 quizzes solved.
+347 quizzes solved.
+348 quizzes solved.
+349 quizzes solved.
+350 quizzes solved.
+351 quizzes solved.
+352 quizzes solved.
+353 quizzes solved.
+354 quizzes solved.
+355 quizzes solved.
+356 quizzes solved.
+357 quizzes solved.
+358 quizzes solved.
+359 quizzes solved.
+360 quizzes solved.
+361 quizzes solved.
+362 quizzes solved.
+363 quizzes solved.
+364 quizzes solved.
+365 quizzes solved.
+366 quizzes solved.
+367 quizzes solved.
+368 quizzes solved.
+369 quizzes solved.
+370 quizzes solved.
+371 quizzes solved.
+372 quizzes solved.
+373 quizzes solved.
+374 quizzes solved.
+375 quizzes solved.
+376 quizzes solved.
+377 quizzes solved.
+378 quizzes solved.
+379 quizzes solved.
+380 quizzes solved.
+381 quizzes solved.
+382 quizzes solved.
+383 quizzes solved.
+384 quizzes solved.
+385 quizzes solved.
+386 quizzes solved.
+387 quizzes solved.
+388 quizzes solved.
+389 quizzes solved.
+390 quizzes solved.
+391 quizzes solved.
+392 quizzes solved.
+393 quizzes solved.
+394 quizzes solved.
+395 quizzes solved.
+396 quizzes solved.
+397 quizzes solved.
+398 quizzes solved.
+399 quizzes solved.
+400 quizzes solved.
+400 quizzes solved.
+401 quizzes solved.
+402 quizzes solved.
+403 quizzes solved.
+404 quizzes solved.
+405 quizzes solved.
+406 quizzes solved.
+407 quizzes solved.
+408 quizzes solved.
+409 quizzes solved.
+410 quizzes solved.
+411 quizzes solved.
+412 quizzes solved.
+413 quizzes solved.
+414 quizzes solved.
+415 quizzes solved.
+416 quizzes solved.
+417 quizzes solved.
+418 quizzes solved.
+419 quizzes solved.
+420 quizzes solved.
+421 quizzes solved.
+422 quizzes solved.
+423 quizzes solved.
+424 quizzes solved.
+425 quizzes solved.
+426 quizzes solved.
+427 quizzes solved.
+428 quizzes solved.
+429 quizzes solved.
+430 quizzes solved.
+431 quizzes solved.
+432 quizzes solved.
+433 quizzes solved.
+434 quizzes solved.
+435 quizzes solved.
+436 quizzes solved.
+437 quizzes solved.
+438 quizzes solved.
+439 quizzes solved.
+440 quizzes solved.
+441 quizzes solved.
+442 quizzes solved.
+443 quizzes solved.
+444 quizzes solved.
+445 quizzes solved.
+446 quizzes solved.
+447 quizzes solved.
+448 quizzes solved.
+449 quizzes solved.
+450 quizzes solved.
+451 quizzes solved.
+452 quizzes solved.
+453 quizzes solved.
+454 quizzes solved.
+455 quizzes solved.
+456 quizzes solved.
+457 quizzes solved.
+458 quizzes solved.
+459 quizzes solved.
+460 quizzes solved.
+461 quizzes solved.
+462 quizzes solved.
+463 quizzes solved.
+464 quizzes solved.
+465 quizzes solved.
+466 quizzes solved.
+467 quizzes solved.
+468 quizzes solved.
+469 quizzes solved.
+470 quizzes solved.
+471 quizzes solved.
+472 quizzes solved.
+473 quizzes solved.
+474 quizzes solved.
+475 quizzes solved.
+476 quizzes solved.
+477 quizzes solved.
+478 quizzes solved.
+479 quizzes solved.
+480 quizzes solved.
+481 quizzes solved.
+482 quizzes solved.
+483 quizzes solved.
+484 quizzes solved.
+485 quizzes solved.
+486 quizzes solved.
+487 quizzes solved.
+488 quizzes solved.
+489 quizzes solved.
+490 quizzes solved.
+491 quizzes solved.
+492 quizzes solved.
+493 quizzes solved.
+494 quizzes solved.
+495 quizzes solved.
+496 quizzes solved.
+497 quizzes solved.
+498 quizzes solved.
+499 quizzes solved.
+500 quizzes solved.
+500 quizzes solved.
+501 quizzes solved.
+502 quizzes solved.
+503 quizzes solved.
+504 quizzes solved.
+505 quizzes solved.
+506 quizzes solved.
+507 quizzes solved.
+508 quizzes solved.
+509 quizzes solved.
+510 quizzes solved.
+511 quizzes solved.
+512 quizzes solved.
+513 quizzes solved.
+514 quizzes solved.
+515 quizzes solved.
+516 quizzes solved.
+517 quizzes solved.
+518 quizzes solved.
+519 quizzes solved.
+520 quizzes solved.
+521 quizzes solved.
+522 quizzes solved.
+523 quizzes solved.
+524 quizzes solved.
+525 quizzes solved.
+526 quizzes solved.
+527 quizzes solved.
+528 quizzes solved.
+529 quizzes solved.
+530 quizzes solved.
+531 quizzes solved.
+532 quizzes solved.
+533 quizzes solved.
+534 quizzes solved.
+535 quizzes solved.
+536 quizzes solved.
+537 quizzes solved.
+538 quizzes solved.
+539 quizzes solved.
+540 quizzes solved.
+541 quizzes solved.
+542 quizzes solved.
+543 quizzes solved.
+544 quizzes solved.
+545 quizzes solved.
+546 quizzes solved.
+547 quizzes solved.
+548 quizzes solved.
+549 quizzes solved.
+550 quizzes solved.
+551 quizzes solved.
+552 quizzes solved.
+553 quizzes solved.
+554 quizzes solved.
+555 quizzes solved.
+556 quizzes solved.
+557 quizzes solved.
+558 quizzes solved.
+559 quizzes solved.
+560 quizzes solved.
+561 quizzes solved.
+562 quizzes solved.
+563 quizzes solved.
+564 quizzes solved.
+565 quizzes solved.
+566 quizzes solved.
+567 quizzes solved.
+568 quizzes solved.
+569 quizzes solved.
+570 quizzes solved.
+571 quizzes solved.
+572 quizzes solved.
+573 quizzes solved.
+574 quizzes solved.
+575 quizzes solved.
+576 quizzes solved.
+577 quizzes solved.
+578 quizzes solved.
+579 quizzes solved.
+580 quizzes solved.
+581 quizzes solved.
+582 quizzes solved.
+583 quizzes solved.
+584 quizzes solved.
+585 quizzes solved.
+586 quizzes solved.
+587 quizzes solved.
+588 quizzes solved.
+589 quizzes solved.
+590 quizzes solved.
+591 quizzes solved.
+592 quizzes solved.
+593 quizzes solved.
+594 quizzes solved.
+595 quizzes solved.
+596 quizzes solved.
+597 quizzes solved.
+598 quizzes solved.
+599 quizzes solved.
+600 quizzes solved.
+600 quizzes solved.
+601 quizzes solved.
+602 quizzes solved.
+603 quizzes solved.
+604 quizzes solved.
+605 quizzes solved.
+606 quizzes solved.
+607 quizzes solved.
+608 quizzes solved.
+609 quizzes solved.
+610 quizzes solved.
+611 quizzes solved.
+612 quizzes solved.
+613 quizzes solved.
+614 quizzes solved.
+615 quizzes solved.
+616 quizzes solved.
+617 quizzes solved.
+618 quizzes solved.
+619 quizzes solved.
+620 quizzes solved.
+621 quizzes solved.
+622 quizzes solved.
+623 quizzes solved.
+624 quizzes solved.
+625 quizzes solved.
+626 quizzes solved.
+627 quizzes solved.
+628 quizzes solved.
+629 quizzes solved.
+630 quizzes solved.
+631 quizzes solved.
+632 quizzes solved.
+633 quizzes solved.
+634 quizzes solved.
+635 quizzes solved.
+636 quizzes solved.
+637 quizzes solved.
+638 quizzes solved.
+639 quizzes solved.
+640 quizzes solved.
+641 quizzes solved.
+642 quizzes solved.
+643 quizzes solved.
+644 quizzes solved.
+645 quizzes solved.
+646 quizzes solved.
+647 quizzes solved.
+648 quizzes solved.
+649 quizzes solved.
+650 quizzes solved.
+651 quizzes solved.
+652 quizzes solved.
+653 quizzes solved.
+654 quizzes solved.
+655 quizzes solved.
+656 quizzes solved.
+657 quizzes solved.
+658 quizzes solved.
+659 quizzes solved.
+660 quizzes solved.
+661 quizzes solved.
+662 quizzes solved.
+663 quizzes solved.
+664 quizzes solved.
+665 quizzes solved.
+666 quizzes solved.
+667 quizzes solved.
+668 quizzes solved.
+669 quizzes solved.
+670 quizzes solved.
+671 quizzes solved.
+672 quizzes solved.
+673 quizzes solved.
+674 quizzes solved.
+675 quizzes solved.
+676 quizzes solved.
+677 quizzes solved.
+678 quizzes solved.
+679 quizzes solved.
+680 quizzes solved.
+681 quizzes solved.
+682 quizzes solved.
+683 quizzes solved.
+684 quizzes solved.
+685 quizzes solved.
+686 quizzes solved.
+687 quizzes solved.
+688 quizzes solved.
+689 quizzes solved.
+690 quizzes solved.
+691 quizzes solved.
+692 quizzes solved.
+693 quizzes solved.
+694 quizzes solved.
+695 quizzes solved.
+696 quizzes solved.
+697 quizzes solved.
+698 quizzes solved.
+699 quizzes solved.
+700 quizzes solved.
+700 quizzes solved.
+701 quizzes solved.
+702 quizzes solved.
+703 quizzes solved.
+704 quizzes solved.
+705 quizzes solved.
+706 quizzes solved.
+707 quizzes solved.
+708 quizzes solved.
+709 quizzes solved.
+710 quizzes solved.
+711 quizzes solved.
+712 quizzes solved.
+713 quizzes solved.
+714 quizzes solved.
+715 quizzes solved.
+716 quizzes solved.
+717 quizzes solved.
+718 quizzes solved.
+719 quizzes solved.
+720 quizzes solved.
+721 quizzes solved.
+722 quizzes solved.
+723 quizzes solved.
+724 quizzes solved.
+725 quizzes solved.
+726 quizzes solved.
+727 quizzes solved.
+728 quizzes solved.
+729 quizzes solved.
+730 quizzes solved.
+731 quizzes solved.
+732 quizzes solved.
+733 quizzes solved.
+734 quizzes solved.
+735 quizzes solved.
+736 quizzes solved.
+737 quizzes solved.
+738 quizzes solved.
+739 quizzes solved.
+740 quizzes solved.
+741 quizzes solved.
+742 quizzes solved.
+743 quizzes solved.
+744 quizzes solved.
+745 quizzes solved.
+746 quizzes solved.
+747 quizzes solved.
+748 quizzes solved.
+749 quizzes solved.
+750 quizzes solved.
+751 quizzes solved.
+752 quizzes solved.
+753 quizzes solved.
+754 quizzes solved.
+755 quizzes solved.
+756 quizzes solved.
+757 quizzes solved.
+758 quizzes solved.
+759 quizzes solved.
+760 quizzes solved.
+761 quizzes solved.
+762 quizzes solved.
+763 quizzes solved.
+764 quizzes solved.
+765 quizzes solved.
+766 quizzes solved.
+767 quizzes solved.
+768 quizzes solved.
+769 quizzes solved.
+770 quizzes solved.
+771 quizzes solved.
+772 quizzes solved.
+773 quizzes solved.
+774 quizzes solved.
+775 quizzes solved.
+776 quizzes solved.
+777 quizzes solved.
+778 quizzes solved.
+779 quizzes solved.
+780 quizzes solved.
+781 quizzes solved.
+782 quizzes solved.
+783 quizzes solved.
+784 quizzes solved.
+785 quizzes solved.
+786 quizzes solved.
+787 quizzes solved.
+788 quizzes solved.
+789 quizzes solved.
+790 quizzes solved.
+791 quizzes solved.
+792 quizzes solved.
+793 quizzes solved.
+794 quizzes solved.
+795 quizzes solved.
+796 quizzes solved.
+797 quizzes solved.
+798 quizzes solved.
+799 quizzes solved.
+800 quizzes solved.
+800 quizzes solved.
+801 quizzes solved.
+802 quizzes solved.
+803 quizzes solved.
+804 quizzes solved.
+805 quizzes solved.
+806 quizzes solved.
+807 quizzes solved.
+808 quizzes solved.
+809 quizzes solved.
+810 quizzes solved.
+811 quizzes solved.
+812 quizzes solved.
+813 quizzes solved.
+814 quizzes solved.
+815 quizzes solved.
+816 quizzes solved.
+817 quizzes solved.
+818 quizzes solved.
+819 quizzes solved.
+820 quizzes solved.
+821 quizzes solved.
+822 quizzes solved.
+823 quizzes solved.
+824 quizzes solved.
+825 quizzes solved.
+826 quizzes solved.
+827 quizzes solved.
+828 quizzes solved.
+829 quizzes solved.
+830 quizzes solved.
+831 quizzes solved.
+832 quizzes solved.
+833 quizzes solved.
+834 quizzes solved.
+835 quizzes solved.
+836 quizzes solved.
+837 quizzes solved.
+838 quizzes solved.
+839 quizzes solved.
+840 quizzes solved.
+841 quizzes solved.
+842 quizzes solved.
+843 quizzes solved.
+844 quizzes solved.
+845 quizzes solved.
+846 quizzes solved.
+847 quizzes solved.
+848 quizzes solved.
+849 quizzes solved.
+850 quizzes solved.
+851 quizzes solved.
+852 quizzes solved.
+853 quizzes solved.
+854 quizzes solved.
+855 quizzes solved.
+856 quizzes solved.
+857 quizzes solved.
+858 quizzes solved.
+859 quizzes solved.
+860 quizzes solved.
+861 quizzes solved.
+862 quizzes solved.
+863 quizzes solved.
+864 quizzes solved.
+865 quizzes solved.
+866 quizzes solved.
+867 quizzes solved.
+868 quizzes solved.
+869 quizzes solved.
+870 quizzes solved.
+871 quizzes solved.
+872 quizzes solved.
+873 quizzes solved.
+874 quizzes solved.
+875 quizzes solved.
+876 quizzes solved.
+877 quizzes solved.
+878 quizzes solved.
+879 quizzes solved.
+880 quizzes solved.
+881 quizzes solved.
+882 quizzes solved.
+883 quizzes solved.
+884 quizzes solved.
+885 quizzes solved.
+886 quizzes solved.
+887 quizzes solved.
+888 quizzes solved.
+889 quizzes solved.
+890 quizzes solved.
+891 quizzes solved.
+892 quizzes solved.
+893 quizzes solved.
+894 quizzes solved.
+895 quizzes solved.
+896 quizzes solved.
+897 quizzes solved.
+898 quizzes solved.
+899 quizzes solved.
+900 quizzes solved.
+900 quizzes solved.
+901 quizzes solved.
+902 quizzes solved.
+903 quizzes solved.
+904 quizzes solved.
+905 quizzes solved.
+906 quizzes solved.
+907 quizzes solved.
+908 quizzes solved.
+909 quizzes solved.
+910 quizzes solved.
+911 quizzes solved.
+912 quizzes solved.
+913 quizzes solved.
+914 quizzes solved.
+915 quizzes solved.
+916 quizzes solved.
+917 quizzes solved.
+918 quizzes solved.
+919 quizzes solved.
+920 quizzes solved.
+921 quizzes solved.
+922 quizzes solved.
+923 quizzes solved.
+924 quizzes solved.
+925 quizzes solved.
+926 quizzes solved.
+927 quizzes solved.
+928 quizzes solved.
+929 quizzes solved.
+930 quizzes solved.
+931 quizzes solved.
+932 quizzes solved.
+933 quizzes solved.
+934 quizzes solved.
+935 quizzes solved.
+936 quizzes solved.
+937 quizzes solved.
+938 quizzes solved.
+939 quizzes solved.
+940 quizzes solved.
+941 quizzes solved.
+942 quizzes solved.
+943 quizzes solved.
+944 quizzes solved.
+945 quizzes solved.
+946 quizzes solved.
+947 quizzes solved.
+948 quizzes solved.
+949 quizzes solved.
+950 quizzes solved.
+951 quizzes solved.
+952 quizzes solved.
+953 quizzes solved.
+954 quizzes solved.
+955 quizzes solved.
+956 quizzes solved.
+957 quizzes solved.
+958 quizzes solved.
+959 quizzes solved.
+960 quizzes solved.
+961 quizzes solved.
+962 quizzes solved.
+963 quizzes solved.
+964 quizzes solved.
+965 quizzes solved.
+966 quizzes solved.
+967 quizzes solved.
+968 quizzes solved.
+969 quizzes solved.
+970 quizzes solved.
+971 quizzes solved.
+972 quizzes solved.
+973 quizzes solved.
+974 quizzes solved.
+975 quizzes solved.
+976 quizzes solved.
+977 quizzes solved.
+978 quizzes solved.
+979 quizzes solved.
+980 quizzes solved.
+981 quizzes solved.
+982 quizzes solved.
+983 quizzes solved.
+984 quizzes solved.
+985 quizzes solved.
+986 quizzes solved.
+987 quizzes solved.
+988 quizzes solved.
+989 quizzes solved.
+990 quizzes solved.
+991 quizzes solved.
+992 quizzes solved.
+993 quizzes solved.
+994 quizzes solved.
+995 quizzes solved.
+996 quizzes solved.
+997 quizzes solved.
+998 quizzes solved.
+999 quizzes solved.
+1000 quizzes solved.
+
+
+Zchaff with (1) minimal encoding, (2) efficient encoding, (3) extended encoding, (4) optimised encoding 
+
+Encoding (1)
+Max Decision Level
+  Mean : 0.0
+  Standard deviation: 0.0
+Num. of Decisions
+  Mean : 1.0
+  Standard deviation: 0.0
+Original Num Variables
+  Mean : 729.0
+  Standard deviation: 0.0
+Original Num Clauses
+  Mean : 8862.769
+  Standard deviation: 0.885676816577821
+Original Num Literals
+  Mean : 18258.769
+  Standard deviation: 0.885676816577821
+Added Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Num of Shrinkings
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Added Conflict Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted (Total) Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Number of Implication
+  Mean : 729.0
+  Standard deviation: 0.0
+Total Run Time
+  Mean : 0.00026893500000000004
+  Standard deviation: 6.566158861327693e-05
+
+Encoding (2)
+Max Decision Level
+  Mean : 0.0
+  Standard deviation: 0.0
+Num. of Decisions
+  Mean : 1.0
+  Standard deviation: 0.0
+Original Num Variables
+  Mean : 729.0
+  Standard deviation: 0.0
+Original Num Clauses
+  Mean : 11778.769
+  Standard deviation: 0.885676816577821
+Original Num Literals
+  Mean : 24090.769
+  Standard deviation: 0.885676816577821
+Added Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Num of Shrinkings
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Added Conflict Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted (Total) Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Number of Implication
+  Mean : 729.0
+  Standard deviation: 0.0
+Total Run Time
+  Mean : 0.000363417
+  Standard deviation: 7.720926357232908e-05
+
+Encoding (3)
+Max Decision Level
+  Mean : 0.0
+  Standard deviation: 0.0
+Num. of Decisions
+  Mean : 1.0
+  Standard deviation: 0.0
+Original Num Variables
+  Mean : 729.0
+  Standard deviation: 0.0
+Original Num Clauses
+  Mean : 12021.769
+  Standard deviation: 0.885676816577821
+Original Num Literals
+  Mean : 26277.769
+  Standard deviation: 0.885676816577821
+Added Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Num of Shrinkings
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Conflict Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted Clauses
+  Mean : 0.0
+  Standard deviation: 0.0
+Added Conflict Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Deleted (Total) Literals
+  Mean : 0.0
+  Standard deviation: 0.0
+Number of Implication
+  Mean : 729.0
+  Standard deviation: 0.0
+Total Run Time
+  Mean : 0.0005617810000000001
+  Standard deviation: 0.00010670570343775514
+
+Walksat with (1) minimal encoding, (2) efficient encoding, (3) extended encoding, (4) optimised encoding 
+
+Encoding (1)
+total elapsed seconds
+  Mean : 0.037790000000000004
+  Standard deviation: 0.0251485257688865
+average flips per second
+  Mean : 1126654.095
+  Standard deviation: 172968.76922947314
+number solutions found
+  Mean : 9.996
+  Standard deviation: 0.09996996545960192
+final success rate
+  Mean : 99.96
+  Standard deviation: 0.9996996545960192
+average length successful tries
+  Mean : 4240.628
+  Standard deviation: 2886.9469247220604
+average flips per assign (over all runs)
+  Mean : 4295.042879365
+  Standard deviation: 3264.3630480748006
+average seconds per assign (over all runs)
+  Mean : 0.0037932070000000007
+  Standard deviation: 0.0026745379289298335
+mean flips until assign
+  Mean : 4280.757165079
+  Standard deviation: 3092.229512191344
+variance
+  Mean : 12477153.187521143
+  Standard deviation: 115248959.53169356
+standard deviation
+  Mean : 1371.151586812
+  Standard deviation: 3255.8608779907195
+standard error of mean
+  Mean : 435.31536784200006
+  Standard deviation: 1068.8313017179591
+mean seconds until assign
+  Mean : 0.0037812960000000004
+  Standard deviation: 0.0025293413640946373
+mean restarts until assign
+  Mean : 1.000396825
+  Standard deviation: 0.009690953958460438
+overall mean average numbad
+  Mean : 4.896952997983872
+  Standard deviation: 1.168091628134095
+overall mean meanbad std deviation
+  Mean : 2.167549069556452
+  Standard deviation: 0.4516003199032823
+overall ratio mean numbad to mean std dev
+  Mean : nan
+  Standard deviation: nan
+successful mean average numbad
+  Mean : 4.897800802419355
+  Standard deviation: 1.1678170334055902
+successful mean numbad std deviation
+  Mean : 2.167727737903226
+  Standard deviation: 0.4515502692364287
+successful ratio mean numbad to mean std dev
+  Mean : nan
+  Standard deviation: nan
+nonsuccessful mean average numbad level
+  Mean : 0.007017904233870967
+  Standard deviation: 0.15625660298096938
+nonsuccessful mean numbad std deviation
+  Mean : 0.003981707661290323
+  Standard deviation: 0.08912177436568472
+nonsuccessful ratio mean numbad to mean std dev
+  Mean : 0.0035847631048387097
+  Standard deviation: 0.08007067482095982
+
+Encoding (2)
+total elapsed seconds
+  Mean : 0.10056000000000001
+  Standard deviation: 0.06773532663591779
+average flips per second
+  Mean : 942710.004
+  Standard deviation: 113085.74621860973
+number solutions found
+  Mean : 9.938
+  Standard deviation: 0.3468087027112732
+final success rate
+  Mean : 99.38
+  Standard deviation: 3.4680870271127318
+average length successful tries
+  Mean : 9186.82
+  Standard deviation: 5714.584640480287
+average flips per assign (over all runs)
+  Mean : 9978.146626587
+  Standard deviation: 8486.221072619215
+average seconds per assign (over all runs)
+  Mean : 0.010327925
+  Standard deviation: 0.008105697052202055
+mean flips until assign
+  Mean : 9940.24980119
+  Standard deviation: 8347.01536510096
+variance
+  Mean : 82602579.15724789
+  Standard deviation: 630599864.1345766
+standard deviation
+  Mean : 3683.2139509749995
+  Standard deviation: 8310.206615567127
+standard error of mean
+  Mean : 1189.7501786736668
+  Standard deviation: 2888.2255254028482
+mean seconds until assign
+  Mean : 0.010292784000000001
+  Standard deviation: 0.00799531214197367
+mean restarts until assign
+  Mean : 1.007529758
+  Standard deviation: 0.04680804394335699
+overall mean average numbad
+  Mean : 4.403016517552658
+  Standard deviation: 0.7519988672365638
+overall mean meanbad std deviation
+  Mean : 1.8606127261785357
+  Standard deviation: 0.2632858415394813
+overall ratio mean numbad to mean std dev
+  Mean : 2.367471574724173
+  Standard deviation: 0.23381853552372944
+successful mean average numbad
+  Mean : 4.40574009227683
+  Standard deviation: 0.7524587200278413
+successful mean numbad std deviation
+  Mean : 1.8620556820461387
+  Standard deviation: 0.2641935023673267
+successful ratio mean numbad to mean std dev
+  Mean : 2.367266704112337
+  Standard deviation: 0.2340931503281974
+nonsuccessful mean average numbad level
+  Mean : 0.16488385356068205
+  Standard deviation: 0.8310660754311431
+nonsuccessful mean numbad std deviation
+  Mean : 0.07001134302908726
+  Standard deviation: 0.34366514184872504
+nonsuccessful ratio mean numbad to mean std dev
+  Mean : 0.09635223871614845
+  Standard deviation: 0.4744933920190968
+
+Encoding (3)
+total elapsed seconds
+  Mean : 0.08280000000000001
+  Standard deviation: 0.038795168063369245
+average flips per second
+  Mean : 664123.937
+  Standard deviation: 70191.98310181011
+number solutions found
+  Mean : 10.0
+  Standard deviation: 0.0
+final success rate
+  Mean : 100.0
+  Standard deviation: 0.0
+average length successful tries
+  Mean : 5518.799
+  Standard deviation: 2727.520971000268
+average flips per assign (over all runs)
+  Mean : 5519.2505
+  Standard deviation: 2727.5296739948167
+average seconds per assign (over all runs)
+  Mean : 0.008280000000000001
+  Standard deviation: 0.0038795168063369247
+mean flips until assign
+  Mean : 5519.2505
+  Standard deviation: 2727.5296739948167
+variance
+  Mean : 7573913.34036846
+  Standard deviation: 24591730.65128631
+standard deviation
+  Mean : 1320.062956343
+  Standard deviation: 2415.220810228097
+standard error of mean
+  Mean : 417.4405596906667
+  Standard deviation: 763.7598812609982
+mean seconds until assign
+  Mean : 0.008280000000000001
+  Standard deviation: 0.0038795168063369247
+mean restarts until assign
+  Mean : 1.0
+  Standard deviation: 0.0
+overall mean average numbad
+  Mean : 32.568611944000004
+  Standard deviation: 3.9127994397912365
+overall mean meanbad std deviation
+  Mean : 11.095207809
+  Standard deviation: 1.0605689001379317
+overall ratio mean numbad to mean std dev
+  Mean : 2.937957829
+  Standard deviation: 0.2557607379145015
+successful mean average numbad
+  Mean : 32.568611944000004
+  Standard deviation: 3.9127994397912365
+successful mean numbad std deviation
+  Mean : 11.095207809
+  Standard deviation: 1.0605689001379317
+successful ratio mean numbad to mean std dev
+  Mean : 2.937957829
+  Standard deviation: 0.2557607379145015
+nonsuccessful mean average numbad level
+  Mean : 0.0
+  Standard deviation: 0.0
+nonsuccessful mean numbad std deviation
+  Mean : 0.0
+  Standard deviation: 0.0
+nonsuccessful ratio mean numbad to mean std dev
+  Mean : 0.0
+  Standard deviation: 0.0
+
